@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <!-- <script src="demo.js"8> </script> -->
+ 
+   <!-- CHANGING HTML CONTENT USING JS-->
+   <!--
+    <p id="a"> hi</p>
+   <script>
+    var s1=document.getElementById("a")
+    s2=a.textContent
+    console.log(s2)
+    a.textContent="hello"
+   </script>
+-->
+
+<!-- CHANGING CONTENT BY CLICKING THE BUTTON-->
+<!--
+<h1 id="a"> HELLO WORLD</h1>
+<button onclick="change()"> change</button>
+<script>
+function change()
+{
+    a.textContent="bye world"       
+}
+</script>
+-->
+
+<!-- ADD BUTTON -->
+<!-- 
+<input id="n1">
+<input id="n2">
+<button onclick="add(n1,n2)"> A D D </button>
+<h4> RESULT :</h4>
+<p id="res" style="background-color:aquamarine; width: 50px;"> </p>
+<script >
+    function add(a,b)
+    {
+        a=Number(n1.value)
+        b=Number(n2.value)
+        sum=a+b
+        console.log(sum)
+        res.textContent=sum
+    }
+</script>
+-->
+<!-- GUESS NUMBER BETWEEN 1 TO 9 -->
+<!--
+<input id="num"> 
+<br>
+<button onclick="randomnum(num)"> CHECK </button>
+<p id="res" style="background-color:aquamarine; width: 50px;"> </p>
+<p>your score is:</p> 
+<p id="score"></p>
+<script>
+    var totscore=10
+    function randomnum(n)
+    {
+        var n=Number(num.value)
+        var a=Math.random()
+        var rn=Math.floor(a*10)+1
+        console.log(rn)
+        if(n==rn)
+        {
+            res.textContent="WIN"
+        }
+        else
+        {
+            res.textContent="loose"
+            totscore=totscore-1
+            score.textContent=totscore
+        }
+    }
+</script>
+-->
+
+<p style="width: 100px; height: 100px; background-color: blueviolet; transition: 3s;" id="box"> hi</p>
+<br>
+<br>
+<button onclick="change()">change</button>
+<script>
+    function change()
+    {
+        box.style.width="200px"
+    }
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>

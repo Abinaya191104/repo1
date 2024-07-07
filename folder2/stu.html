@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            border-style: solid;
+            border-radius: 10px;
+            width: 300px;
+            padding: 20px;
+        }
+        table,th,tr,td
+        {
+            border: 1px solid black;
+            border-collapse:collapse ;
+            width: 500px;
+            height: auto;
+            text-align: center;
+        }
+        th{
+            color: red;
+            font-style: italic;
+        }
+        
+    </style>
+</head>
+<body>
+
+<!-- input form -->
+    
+<form id="ipform">
+    <label> Name</label>
+    <input id="name" type="text"> <br><br>
+    <label> Age</label> 
+    <input type="number" id="age"> <br><br>
+    <label> Gender</label>
+    <input type="radio" name="types" value="Male" id="gen1">Male
+    <input type="radio" name="types" value="Female"  id="gen2">Female <br><br>
+    <label> course</label>
+    <select id="course">
+     <option  value="---"> -- select --</option> 
+     <option  value="c"> C</option>
+     <option  value="c++"> C++</option>
+     <option  value="javascript"> javascript</option>
+    </select> <br><br>
+    <label> E-Mail</label>
+    <input  type="email" id="mail" ><br><br>
+    <button id="save-btn"> S A V E</button>
+</form>
+<br>
+
+  <table class="stutable">
+      <tr class="header">
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Course</th>
+        <th>E-mail</th>
+        <th>Action</th>
+      </tr>
+      
+      <!-- represents the empty row of a table -->
+      <tr class="row">
+        <td id="nameop"> </td>
+        <td id="ageop"></td>
+        <td id="genop"></td>
+        <td id="courseop"></td>
+        <td id="mailop"></td>
+        <td id="act"></td>
+      </tr>
+
+    </table>
+
+
+<script>
+   // selecting save-btn, inputs
+   var savebtn=document.getElementById("save-btn")
+   var name1=document.getElementById("name")
+   var age1=document.getElementById("age")
+   var gen11=document.getElementById("gen1")
+   var gen21=document.getElementById("gen2")
+   var cou1=document.getElementById("course") 
+   var mail1=document.getElementById("mail")
+
+   // selecting table,and its row
+
+   var row=document.querySelector(".row")
+   var stutable=document.querySelector(".stutable")
+   
+   savebtn.addEventListener("click",function(event)
+   {
+     event.preventDefault()
+     var tablerow=document.createElement("tr")
+     tablerow.setAttribute("class","row")
+     tablerow.innerHTML=
+        `<td id="nameop">${name1.value} </td>
+        <td id="ageop">${age1.value}</td>
+        <td id="courseop">${cou1.value} </td>
+        <td id="genop">${gender()} </td>
+        <td id="mailop"> ${mail1.value}</td>
+        <td id="act"><button onclick="deleterow(event)"> DELETE</button></td>`
+     stutable.appendChild(tablerow)
+
+     // to disappear the entered data from the form
+     /*
+     name1.value =""
+     age1.value=""
+     gen11.value=""
+     gen21.value=""
+     cou1.value=""
+     mail1.value=""  */
+
+   })
+       
+   function gender()
+    {
+        if(gen11.checked==true)
+        {
+            return "Male"
+        }
+        else if(gen21.checked==true)
+        {
+            return "Female"
+        }
+        else{
+            return "null"
+        }
+      
+    }
+
+    function deleterow(event)
+    {
+        event.target.closest('tr').remove()
+    }
+
+    
+</script>
+
+
+
+
+
+</body>
+</html>

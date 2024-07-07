@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- using onkeyup-->
+    <!--
+    <input id="get" onkeyup="disp()">
+    <p id="show"></p>
+    <script>
+        function disp()
+        {
+            show.textContent=get.value
+
+        }
+        
+    </script>
+    -->
+ PRINTING HELLO
+    <button onclick="hello()"> add hello</button>
+    
+    <h1 id="res"> </h1>
+    <br>
+    <script>
+        function hello()
+        {
+            var list=document.createElement("h1")
+            list.textContent="hello"
+            res.append(list)
+        }   
+    </script>
+
+<!-- CHANGING COLOUR OF THE BUTTON
+
+<button id="cc" onclick="change()" style="background-color:white; width:200px ;"> CHANGE COLOR</button>
+<script>
+    function change()
+    {
+        cc.style.backgroundColor="red"
+    }
+</script>
+-->
+<!-- 
+<h1 id="name"> NAME </h1>
+<button onClick="update(event)"> RM </button>
+<button onclick="update(event)"> JIN </button>
+<button onclick="update(event)"> SUGA </button>
+<script>
+    var a=document.getElementById("name")
+    function update(event)
+        {
+            a.textContent=event.target.textContent
+        }
+</script>
+<h1 onclick="update(event)"> one</h1>
+<h1 onclick="update(event)"> two</h1>
+<h1 onclick="update(event)"> three</h1>
+<script>
+    function update()
+    {
+        event.target.remove()
+
+    }
+</script>
+-->
+
+</body>
+</html>
